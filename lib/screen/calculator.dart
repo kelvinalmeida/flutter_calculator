@@ -17,14 +17,12 @@ class _CalculatorState extends State<Calculator> {
       body: Column(
         children: [
           Container(
-            height: (size.height - 30) / 2,
+            height: (size.height) / 2.65,
+            margin: const EdgeInsets.only(top: 24),
+            padding: const EdgeInsets.all(0),
             alignment: Alignment.center,
-            // child: const Text(
-            //   'Ana Beatriz!',
-            //   style: TextStyle(fontSize: 50),
-            // ),
           ),
-          Buttons(),
+          const Buttons(),
         ],
       ),
     );

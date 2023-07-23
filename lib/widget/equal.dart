@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/widget/gridItem.dart';
+import 'package:flutter_calculator/widget/grid_Item.dart';
 
 class EqualWidget extends StatelessWidget {
   const EqualWidget({super.key});
