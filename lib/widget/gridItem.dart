@@ -13,7 +13,7 @@ class GridItem extends StatelessWidget {
     return Text(
       content,
       style: const TextStyle(
-        backgroundColor: Colors.amber,
+        // backgroundColor: Colors.amber,
         fontSize: 30,
       ),
     );
