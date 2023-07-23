@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/widget/equal.dart';
 import 'package:flutter_calculator/widget/gridItem.dart';
+import 'package:flutter_calculator/widget/operatorsOperands.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -13,65 +14,19 @@ class Buttons extends StatelessWidget {
 
     return Expanded(
       child: GridView.count(
-        padding: const EdgeInsets.all(10),
         childAspectRatio: size.width * 4 / size.height,
         crossAxisCount: 2,
-        children: [
-          Container(
-            color: Colors.cyan,
-            width: 50,
-            height: 50,
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                GridItem(content: '1'),
-                GridItem(content: '2'),
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '3'),
-              GridItem(content: '-'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '4'),
-              GridItem(content: '5'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '6'),
-              GridItem(content: 'X'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '7'),
-              GridItem(content: '8'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '9'),
-              GridItem(content: '/'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GridItem(content: '0'),
-              GridItem(content: '.'),
-            ],
-          ),
-          const EqualWidget()
+        children: const [
+          OperatorsOperands(value1: 'C', value2: '+-'),
+          OperatorsOperands(value1: '%', value2: '+'),
+          OperatorsOperands(value1: '1', value2: '2'),
+          OperatorsOperands(value1: '3', value2: '-'),
+          OperatorsOperands(value1: '4', value2: '5'),
+          OperatorsOperands(value1: '6', value2: 'X'),
+          OperatorsOperands(value1: '7', value2: '8'),
+          OperatorsOperands(value1: '9', value2: '/'),
+          OperatorsOperands(value1: '0', value2: '.'),
+          EqualWidget()
         ],
       ),
     );
