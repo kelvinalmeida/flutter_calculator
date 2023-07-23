@@ -18,6 +18,11 @@ class _CalculatorState extends State<Calculator> {
         children: [
           Container(
             height: (size.height - 30) / 2,
+            alignment: Alignment.center,
+            // child: const Text(
+            //   'Ana Beatriz!',
+            //   style: TextStyle(fontSize: 50),
+            // ),
           ),
           Buttons(),
         ],

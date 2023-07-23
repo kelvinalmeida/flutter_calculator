@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/widget/equal.dart';
 import 'package:flutter_calculator/widget/gridItem.dart';
 
 class Buttons extends StatelessWidget {
@@ -70,23 +71,7 @@ class Buttons extends StatelessWidget {
               GridItem(content: '.'),
             ],
           ),
-          Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(250, 35, 148, 137),
-                Color.fromARGB(250, 43, 182, 168)
-              ],
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-            )),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                GridItem(content: '='),
-              ],
-            ),
-          )
+          const EqualWidget()
         ],
       ),
     );
