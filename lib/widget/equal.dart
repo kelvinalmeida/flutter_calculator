@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calculator/widget/grid_Item.dart';
 
 class EqualWidget extends StatelessWidget {
   const EqualWidget({super.key});
@@ -19,7 +18,10 @@ class EqualWidget extends StatelessWidget {
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          GridItem(content: '='),
+          Text(
+            '=',
+            style: TextStyle(fontSize: 30),
+          ),
         ],
       ),
     );
