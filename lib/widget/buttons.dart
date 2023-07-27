@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/widget/equal.dart';
 import 'package:flutter_calculator/widget/operand_style.dart';
+import 'package:flutter_calculator/widget/operator_style.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -46,7 +47,7 @@ class Buttons extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 OperandStyle(content: '%'),
-                OperandStyle(content: '+')
+                OperatorStyle(content: '+')
               ],
             ),
             Row(

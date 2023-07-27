@@ -11,6 +11,8 @@ class OperatorStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      alignment: Alignment.center,
       decoration: const BoxDecoration(
         color: Color.fromARGB(250, 193, 238, 234),
       ),
