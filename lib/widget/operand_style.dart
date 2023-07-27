@@ -10,11 +10,16 @@ class OperandStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      content,
-      style: const TextStyle(
-        // backgroundColor: Colors.amber,
-        fontSize: 30,
+    var size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: double.infinity,
+      width: size.width / 4,
+      child: TextButton(
+        onPressed: () {},
+        child: Text(
+          content,
+          style: const TextStyle(fontSize: 30, color: Colors.black),
+        ),
       ),
     );
   }

@@ -5,6 +5,8 @@ class EqualWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -15,12 +17,22 @@ class EqualWidget extends StatelessWidget {
         begin: Alignment.bottomLeft,
         end: Alignment.topRight,
       )),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            '=',
-            style: TextStyle(fontSize: 30),
+          SizedBox(
+            height: double.infinity,
+            width: size.width / 2,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text(
+                '=',
+                style: TextStyle(
+                  fontSize: 50,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ),
         ],
       ),

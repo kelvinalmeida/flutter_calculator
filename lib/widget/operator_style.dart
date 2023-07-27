@@ -10,17 +10,21 @@ class OperatorStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      height: double.infinity,
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(250, 193, 238, 234),
-      ),
-      child: Text(
-        content,
-        style: const TextStyle(
-          // backgroundColor: Colors.amber,
-          fontSize: 30,
+      color: const Color.fromARGB(250, 193, 238, 234),
+      child: SizedBox(
+        height: double.infinity,
+        width: size.width / 4,
+        child: TextButton(
+          onPressed: () {},
+          child: Text(
+            content,
+            style: const TextStyle(
+                fontSize: 40,
+                color: Colors.black,
+                fontWeight: FontWeight.normal),
+          ),
         ),
       ),
     );
