@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/widget/buttons.dart';
+import 'package:flutter_calculator/providers/screem.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Calculator extends StatefulWidget {
+class Calculator extends ConsumerStatefulWidget {
   const Calculator({super.key});
 
   @override
-  State<Calculator> createState() => _CalculatorState();
+  ConsumerState<Calculator> createState() => _CalculatorState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class _CalculatorState extends ConsumerState<Calculator> {
+  List<String> none = ['oi', 'rere', 'dasd'];
+
   @override
   Widget build(BuildContext context) {
+    final List<String> screen = ref.watch(screenProvider);
+    print(screen);
+
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -21,6 +28,9 @@ class _CalculatorState extends State<Calculator> {
             margin: const EdgeInsets.only(top: 24),
             padding: const EdgeInsets.all(0),
             alignment: Alignment.center,
+            child: Row(
+              children: screen.map((calButton) => Text(calButton)).toList(),
+            ),
           ),
           const Buttons(),
         ],

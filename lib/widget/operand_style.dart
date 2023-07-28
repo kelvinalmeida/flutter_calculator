@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/providers/screem.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class OperandStyle extends StatelessWidget {
+class OperandStyle extends ConsumerStatefulWidget {
   const OperandStyle({
     super.key,
     required this.content,
@@ -9,15 +11,26 @@ class OperandStyle extends StatelessWidget {
   final String content;
 
   @override
+  ConsumerState<OperandStyle> createState() => _OperandStyleState();
+}
+
+class _OperandStyleState extends ConsumerState<OperandStyle> {
+  @override
   Widget build(BuildContext context) {
+    void addScreem(String item) {
+      ref.watch(screenProvider.notifier).addToScreen(item);
+    }
+
     var size = MediaQuery.of(context).size;
     return SizedBox(
       height: double.infinity,
       width: size.width / 4,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          addScreem(widget.content);
+        },
         child: Text(
-          content,
+          widget.content,
           style: const TextStyle(fontSize: 30, color: Colors.black),
         ),
       ),
