@@ -11,12 +11,12 @@ class Calculator extends ConsumerStatefulWidget {
 }
 
 class _CalculatorState extends ConsumerState<Calculator> {
-  List<String> none = ['oi', 'rere', 'dasd'];
-
   @override
   Widget build(BuildContext context) {
     final List<String> screen = ref.watch(screenProvider);
-    print(screen);
+
+    List<String> none = ['oi', 'rere', 'dasd'];
+    print(none.removeLast());
 
     var size = MediaQuery.of(context).size;
 

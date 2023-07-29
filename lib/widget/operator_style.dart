@@ -13,9 +13,7 @@ class OperatorStyle extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     void addScreem(String item) {
-      if (item != 'c') {
-        ref.watch(screenProvider.notifier).addToScreen(item);
-      }
+      ref.watch(screenProvider.notifier).addToScreen(item);
     }
 
     var size = MediaQuery.of(context).size;

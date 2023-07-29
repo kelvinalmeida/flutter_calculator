@@ -18,7 +18,12 @@ class _OperandStyleState extends ConsumerState<OperandStyle> {
   @override
   Widget build(BuildContext context) {
     void addScreem(String item) {
-      ref.watch(screenProvider.notifier).addToScreen(item);
+      if (item == 'C') {
+        ref.watch(screenProvider.notifier).removeToScreen();
+        return;
+      } else {
+        ref.watch(screenProvider.notifier).addToScreen(item);
+      }
     }
 
     var size = MediaQuery.of(context).size;

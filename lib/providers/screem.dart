@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
 
 class ScreenNotifier extends StateNotifier<List<String>> {
   ScreenNotifier() : super(['+', '2', '+', '2']);
@@ -8,8 +7,13 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     state = [...state, item];
   }
 
-  void removeToScreen(String item) {
-    var screenCopy = state;
+  void removeToScreen() {
+    var lastItemRemoved = state;
+    if (state.isNotEmpty) {
+      lastItemRemoved.removeLast();
+      print(lastItemRemoved);
+      state = lastItemRemoved;
+    }
   }
 }
 
