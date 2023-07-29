@@ -24,12 +24,22 @@ class _CalculatorState extends ConsumerState<Calculator> {
       body: Column(
         children: [
           Container(
+            // color: Colors.amber,
             height: (size.height) / 2.65,
             margin: const EdgeInsets.only(top: 24),
-            padding: const EdgeInsets.all(0),
-            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.bottomRight,
             child: Row(
-              children: screen.map((calButton) => Text(calButton)).toList(),
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: screen
+                  .map((calButton) => Text(
+                        calButton,
+                        style: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ))
+                  .toList(),
             ),
           ),
           const Buttons(),

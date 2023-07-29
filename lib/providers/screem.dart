@@ -4,15 +4,14 @@ class ScreenNotifier extends StateNotifier<List<String>> {
   ScreenNotifier() : super(['+', '2', '+', '2']);
 
   void addToScreen(item) {
-    state = [...state, item];
+    if (state.length < 20) state = [...state, item];
   }
 
   void removeToScreen() {
-    var lastItemRemoved = state;
     if (state.isNotEmpty) {
-      lastItemRemoved.removeLast();
-      print(lastItemRemoved);
-      state = lastItemRemoved;
+      // in the for loop I'm going to the penultimate item (state.length - 1).
+      // state = [for (int i = 0; i < state.length - 1; i++) state[i]];
+      state = [];
     }
   }
 }
