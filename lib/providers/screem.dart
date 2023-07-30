@@ -12,8 +12,13 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     if ((lastElement == '+' ||
             lastElement == '-' ||
             lastElement == 'x' ||
-            lastElement == '/') &&
-        (item == '+' || item == '-' || item == 'x' || item == '/')) {
+            lastElement == '/' ||
+            lastElement == '.') &&
+        (item == '+' ||
+            item == '-' ||
+            item == 'x' ||
+            item == '/' ||
+            item == '.')) {
       return;
     }
 
