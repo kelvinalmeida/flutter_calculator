@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:function_tree/function_tree.dart';
 
 class ScreenNotifier extends StateNotifier<List<String>> {
   ScreenNotifier() : super([]);
@@ -31,6 +32,16 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       // state = [for (int i = 0; i < state.length - 1; i++) state[i]];
       state = [];
     }
+  }
+
+  void result() {
+    var value = '';
+    for (var item in state) {
+      if (item == 'x') item = '*';
+      value += item;
+    }
+
+    state = ['${value.interpret()}'];
   }
 }
 

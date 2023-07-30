@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_calculator/providers/screem.dart';
 
-class EqualWidget extends StatelessWidget {
+class EqualWidget extends ConsumerWidget {
   const EqualWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     var size = MediaQuery.of(context).size;
+
+    void result() {
+      ref.watch(screenProvider.notifier).result();
+    }
 
     return Container(
       decoration: const BoxDecoration(
@@ -24,7 +30,7 @@ class EqualWidget extends StatelessWidget {
             height: double.infinity,
             width: size.width / 2,
             child: TextButton(
-              onPressed: () {},
+              onPressed: result,
               child: const Text(
                 '=',
                 style: TextStyle(
