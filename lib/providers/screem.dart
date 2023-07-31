@@ -23,6 +23,8 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       return;
     }
 
+    if (item == '+/-') return;
+
     state = [...state, item];
   }
 
@@ -41,7 +43,7 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       value += item;
     }
 
-    state = ['${value.interpret()}'];
+    state = [value.interpret().toStringAsFixed(2)];
   }
 }
 
