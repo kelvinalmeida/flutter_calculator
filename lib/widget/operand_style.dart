@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/providers/previous_operation.dart';
 import 'package:flutter_calculator/providers/screem.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,6 +21,7 @@ class _OperandStyleState extends ConsumerState<OperandStyle> {
     void addScreem(String item) {
       if (item == 'C') {
         ref.watch(screenProvider.notifier).removeToScreen();
+        ref.watch(previousOperationProvider.notifier).clear();
         return;
       } else {
         ref.watch(screenProvider.notifier).addToScreen(item);

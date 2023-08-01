@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/widget/buttons.dart';
-import 'package:flutter_calculator/providers/screem.dart';
 import 'package:flutter_calculator/widget/screen_calculator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Calculator extends ConsumerStatefulWidget {
   const Calculator({super.key});
