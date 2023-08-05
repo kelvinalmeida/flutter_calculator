@@ -18,7 +18,8 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       return;
     }
     if (state.isEmpty && operators.contains(item)) return;
-    if (item == '+/-') return;
+
+    ref.watch(previousOperationProvider.notifier).newOper(item);
 
     state = [...state, item];
   }
@@ -43,7 +44,7 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     }
 
     state = [value.interpret().toStringAsFixed(2)];
-
+    var list = state;
     ref.watch(previousOperationProvider.notifier).showPreviousOp(value);
   }
 }

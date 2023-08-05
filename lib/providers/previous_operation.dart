@@ -1,3 +1,4 @@
+import 'package:flutter_calculator/providers/screem.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class PreviousOperationNotifier extends StateNotifier<String> {
@@ -12,6 +13,15 @@ class PreviousOperationNotifier extends StateNotifier<String> {
   void showPreviousOp(String values) {
     // print(values);
     state = values;
+  }
+
+  var operators = ['+', '-', 'x', '/', '.'];
+
+  void newOper(String elemt) {
+    if (state.isNotEmpty && !operators.contains(elemt)) {
+      ref.watch(screenProvider.notifier).removeToScreen();
+      clear();
+    }
   }
 }
 

@@ -26,7 +26,7 @@ class ScreenCalculator extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Text(previosOp,
+                Text(previosOp, // Show the previous operations
                     style: GoogleFonts.roboto(
                         fontSize: 60,
                         fontWeight: FontWeight.w300,
@@ -38,7 +38,7 @@ class ScreenCalculator extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: screen
                   .map((calButton) => Text(
-                        calButton,
+                        calButton, // Show the operations
                         style: GoogleFonts.roboto(
                           fontSize: 60,
                           fontWeight: FontWeight.w300,

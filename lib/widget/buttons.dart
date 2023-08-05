@@ -30,7 +30,7 @@ class Buttons extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 OperandStyle(content: 'C'),
-                OperandStyle(content: '+/-')
+                OperandStyle(content: '<<')
               ],
             ),
             Row(
