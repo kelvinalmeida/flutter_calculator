@@ -15,12 +15,15 @@ class PreviousOperationNotifier extends StateNotifier<String> {
     state = values;
   }
 
-  var operators = ['+', '-', 'x', '/', '.'];
+  var operators = ['+', '-', 'x', '/', '.', '%'];
 
-  void newOper(String elemt) {
-    if (state.isNotEmpty && !operators.contains(elemt)) {
+  void newOper(String newElment, String? lastElement) {
+    if (state.isNotEmpty &&
+        !operators.contains(newElment) &&
+        !operators.contains(lastElement)) {
       ref.watch(screenProvider.notifier).removeToScreen();
-      clear();
+      // clear();
+      ref.watch(screenProvider.notifier).addToScreen(newElment);
     }
   }
 }

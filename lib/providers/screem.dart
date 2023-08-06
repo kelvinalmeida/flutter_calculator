@@ -6,7 +6,7 @@ class ScreenNotifier extends StateNotifier<List<String>> {
   ScreenNotifier(this.ref) : super([]);
 
   final Ref ref;
-  var operators = ['+', '-', 'x', '/', '.'];
+  var operators = ['+', '-', 'x', '/', '.', '%'];
 
   void addToScreen(item) {
     var lastElement = state.isEmpty ? null : state[state.length - 1];
@@ -19,9 +19,16 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     }
     if (state.isEmpty && operators.contains(item)) return;
 
-    ref.watch(previousOperationProvider.notifier).newOper(item);
+    if (item == '<<') {
+      var removeLast = state;
+      removeLast.removeLast();
+      print('1');
+      state = removeLast;
+      // return;
+    }
 
     state = [...state, item];
+    ref.watch(previousOperationProvider.notifier).newOper(item, lastElement);
   }
 
   void removeToScreen() {
