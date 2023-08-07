@@ -17,6 +17,9 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       state = [...newArray, item];
       return;
     }
+
+    if (lastElement != null && state.join().contains('.') && item == '.')
+      return;
     if (state.isEmpty && operators.contains(item)) return;
 
     state = [...state, item];
