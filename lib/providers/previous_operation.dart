@@ -17,14 +17,16 @@ class PreviousOperationNotifier extends StateNotifier<String> {
 
   var operators = ['+', '-', 'x', '/', '.', '%'];
 
-  void newOper(String newElment, String? lastElement) {
+  bool newOper(String newElment, String? lastElement) {
+    var cleanScreen = false;
     if (state.isNotEmpty &&
         !operators.contains(newElment) &&
         !operators.contains(lastElement)) {
       ref.watch(screenProvider.notifier).removeToScreen();
-      // clear();
-      ref.watch(screenProvider.notifier).addToScreen(newElment);
+      cleanScreen = true;
+      return cleanScreen;
     }
+    return cleanScreen;
   }
 }
 

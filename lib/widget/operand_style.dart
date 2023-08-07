@@ -23,9 +23,13 @@ class _OperandStyleState extends ConsumerState<OperandStyle> {
         ref.watch(screenProvider.notifier).removeToScreen();
         ref.watch(previousOperationProvider.notifier).clear();
         return;
-      } else {
-        ref.watch(screenProvider.notifier).addToScreen(item);
       }
+      if (item == '<<') {
+        ref.watch(screenProvider.notifier).removeTheLast();
+        return;
+      }
+
+      ref.watch(screenProvider.notifier).addToScreen(item);
     }
 
     var size = MediaQuery.of(context).size;

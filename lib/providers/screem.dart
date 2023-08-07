@@ -19,16 +19,20 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     }
     if (state.isEmpty && operators.contains(item)) return;
 
-    if (item == '<<') {
-      var removeLast = state;
-      removeLast.removeLast();
-      print('1');
-      state = removeLast;
-      // return;
-    }
-
     state = [...state, item];
-    ref.watch(previousOperationProvider.notifier).newOper(item, lastElement);
+    var cleanScreen = ref
+        .watch(previousOperationProvider.notifier)
+        .newOper(item, lastElement);
+
+    if (cleanScreen) state = [...state, item];
+  }
+
+  void removeTheLast() {
+    if (state.isEmpty) return;
+
+    var removeLast = state;
+    removeLast.removeLast();
+    state = [...removeLast];
   }
 
   void removeToScreen() {
