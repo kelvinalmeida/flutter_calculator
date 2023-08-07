@@ -18,11 +18,13 @@ class ScreenNotifier extends StateNotifier<List<String>> {
       return;
     }
 
-    if (lastElement != null && state.join().contains('.') && item == '.')
+    if (lastElement != null && state.join().contains('.') && item == '.') {
       return;
+    }
     if (state.isEmpty && operators.contains(item)) return;
 
     state = [...state, item];
+
     var cleanScreen = ref
         .watch(previousOperationProvider.notifier)
         .newOper(item, lastElement);
@@ -58,7 +60,6 @@ class ScreenNotifier extends StateNotifier<List<String>> {
     }
 
     state = [value.interpret().toStringAsFixed(2)];
-    var list = state;
     ref.watch(previousOperationProvider.notifier).showPreviousOp(value);
   }
 }

@@ -28,9 +28,9 @@ class ScreenCalculator extends ConsumerWidget {
               children: [
                 Text(previosOp, // Show the previous operations
                     style: GoogleFonts.roboto(
-                        fontSize: 60,
-                        fontWeight: FontWeight.w300,
-                        letterSpacing: 3,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w400,
+                        // letterSpacing: 3,
                         color: Colors.blueAccent)),
               ],
             ),
