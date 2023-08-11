@@ -10,7 +10,7 @@ class ScreenCalculator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final List<String> screen = ref.watch(screenProvider);
-    final String previosOp = ref.watch(previousOperationProvider);
+    final Map<String, Object> previosOp = ref.watch(previousOperationProvider);
     var size = MediaQuery.of(context).size;
 
     return Container(
@@ -26,7 +26,9 @@ class ScreenCalculator extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Text(previosOp, // Show the previous operations
+                Text(
+                    previosOp['value']
+                        as String, // Show the previous operations
                     style: GoogleFonts.roboto(
                         fontSize: 30,
                         fontWeight: FontWeight.w400,

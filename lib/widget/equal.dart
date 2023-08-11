@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculator/providers/previous_operation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_calculator/providers/screem.dart';
 
@@ -11,6 +12,7 @@ class EqualWidget extends ConsumerWidget {
 
     void result() {
       ref.watch(screenProvider.notifier).result();
+      ref.watch(previousOperationProvider.notifier).posEqual();
     }
 
     return Container(
