@@ -21,6 +21,11 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 193, 238, 234)),
         // scaffoldBackgroundColor: ,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        /* dark theme settings */
+      ),
+      themeMode: ThemeMode.dark,
       home: const Calculator(),
     );
   }

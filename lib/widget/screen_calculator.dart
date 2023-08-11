@@ -4,11 +4,20 @@ import 'package:flutter_calculator/providers/screem.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ScreenCalculator extends ConsumerWidget {
+class ScreenCalculator extends ConsumerStatefulWidget {
   const ScreenCalculator({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ScreenCalculator> createState() {
+    return _ScreenCalculatorState();
+  }
+}
+
+class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
+  @override
+  bool toggle = true;
+
+  Widget build(BuildContext context) {
     final List<String> screen = ref.watch(screenProvider);
     final Map<String, Object> previosOp = ref.watch(previousOperationProvider);
     var size = MediaQuery.of(context).size;
@@ -24,6 +33,22 @@ class ScreenCalculator extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  toggle = !toggle;
+                  // Material.of(context).dar
+                });
+              },
+              icon: toggle
+                  ? const Icon(
+                      Icons.sunny,
+                      color: Color.fromARGB(255, 214, 200, 68),
+                    )
+                  : const Icon(Icons.sticky_note_2,
+                      color: Color.fromARGB(255, 100, 100, 96)),
+            ),
+            const Spacer(),
             Row(
               children: [
                 Text(
