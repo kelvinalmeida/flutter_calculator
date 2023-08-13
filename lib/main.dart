@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator/screen/calculator.dart';
+import 'package:flutter_calculator/theme/dark_theme.dart';
+import 'package:flutter_calculator/theme/light_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
@@ -16,16 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 193, 238, 234)),
-        // scaffoldBackgroundColor: ,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        /* dark theme settings */
-      ),
-      themeMode: ThemeMode.dark,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      // themeMode: ThemeMode.system,
       home: const Calculator(),
     );
   }

@@ -18,7 +18,7 @@ class OperatorStyle extends ConsumerWidget {
 
     var size = MediaQuery.of(context).size;
     return Container(
-      color: const Color.fromARGB(250, 193, 238, 234),
+      color: Theme.of(context).colorScheme.onBackground,
       child: SizedBox(
         height: double.infinity,
         width: size.width / 4,
@@ -28,9 +28,9 @@ class OperatorStyle extends ConsumerWidget {
           },
           child: Text(
             content,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 40,
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.tertiary,
                 fontWeight: FontWeight.normal),
           ),
         ),

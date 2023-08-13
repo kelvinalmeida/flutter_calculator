@@ -24,6 +24,8 @@ class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
 
     return Container(
       height: (size.height) / 2.65,
+      // color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.background,
       margin: const EdgeInsets.only(top: 24),
       padding: const EdgeInsets.all(10),
       alignment: Alignment.bottomRight,

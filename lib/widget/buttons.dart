@@ -12,11 +12,11 @@ class Buttons extends StatelessWidget {
 
     return Expanded(
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 216, 216, 216),
-            Colors.white,
+            Theme.of(context).colorScheme.primary,
+            Theme.of(context).colorScheme.secondary,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,

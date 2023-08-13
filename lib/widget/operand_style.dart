@@ -42,7 +42,10 @@ class _OperandStyleState extends ConsumerState<OperandStyle> {
         },
         child: Text(
           widget.content,
-          style: const TextStyle(fontSize: 30, color: Colors.black),
+          style: TextStyle(
+            fontSize: 30,
+            color: Theme.of(context).colorScheme.tertiary,
+          ),
         ),
       ),
     );
