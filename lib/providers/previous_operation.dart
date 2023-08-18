@@ -6,13 +6,19 @@ class PreviousOperationNotifier extends StateNotifier<Map<String, Object>> {
 
   final Ref ref;
 
-  void clear() {
+  void clearPreviosOp() {
     state = {'value': '', 'posEqual': false};
   }
 
   void showPreviousOp(String values) {
-    // print(values);
-    state = {'value': values, 'posEqual': false};
+    String val;
+
+    if (values.contains('*')) {
+      val = values.replaceAll('*', 'x');
+    } else {
+      val = values;
+    }
+    state = {'value': val, 'posEqual': false};
   }
 
   void posEqual() {
@@ -26,7 +32,7 @@ class PreviousOperationNotifier extends StateNotifier<Map<String, Object>> {
 
     if (state['posEqual'] as bool && !operators.contains(newElment)) {
       ref.watch(screenProvider.notifier).removeToScreen();
-      clear();
+      clearPreviosOp();
       state = {'value': state['value']!, 'posEqual': false};
       cleanScreen = true;
       return cleanScreen;

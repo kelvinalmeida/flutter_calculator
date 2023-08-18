@@ -32,6 +32,10 @@ class ScreenNotifier extends StateNotifier<List<String>> {
   void removeTheLast() {
     if (state.isEmpty) return;
 
+    if (state.length == 1) {
+      ref.watch(previousOperationProvider.notifier).clearPreviosOp();
+    }
+
     var removeLast = state;
     removeLast.removeLast();
     state = [...removeLast];

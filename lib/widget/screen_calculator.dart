@@ -14,9 +14,9 @@ class ScreenCalculator extends ConsumerStatefulWidget {
 }
 
 class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
-  @override
-  bool toggle = true;
+  var toggleDark = true;
 
+  @override
   Widget build(BuildContext context) {
     final List<String> screen = ref.watch(screenProvider);
     final Map<String, Object> previosOp = ref.watch(previousOperationProvider);
@@ -38,11 +38,11 @@ class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
             IconButton(
               onPressed: () {
                 setState(() {
-                  toggle = !toggle;
+                  toggleDark = !toggleDark;
                   // Material.of(context).dar
                 });
               },
-              icon: toggle
+              icon: toggleDark
                   ? const Icon(
                       Icons.sunny,
                       color: Color.fromARGB(255, 214, 200, 68),

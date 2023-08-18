@@ -21,7 +21,7 @@ class _OperandStyleState extends ConsumerState<OperandStyle> {
     void addScreem(String item) {
       if (item == 'C') {
         ref.watch(screenProvider.notifier).removeToScreen();
-        ref.watch(previousOperationProvider.notifier).clear();
+        ref.watch(previousOperationProvider.notifier).clearPreviosOp();
         return;
       }
       if (item == '<<') {
