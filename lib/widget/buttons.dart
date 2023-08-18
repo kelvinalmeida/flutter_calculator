@@ -13,14 +13,24 @@ class Buttons extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black,
+                offset: Offset(5.0, 5.09),
+              ),
+              BoxShadow(
+                color: Colors.black,
+                offset: Offset(5.0, 5.09),
+              )
+            ],
             gradient: LinearGradient(
-          colors: [
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.secondary,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        )),
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.secondary,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            )),
         child: GridView.count(
           padding: const EdgeInsets.all(0),
           childAspectRatio: size.width * 4.23 / size.height,
