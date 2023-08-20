@@ -14,8 +14,6 @@ class ScreenCalculator extends ConsumerStatefulWidget {
 }
 
 class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
-  var toggleDark = true;
-
   @override
   Widget build(BuildContext context) {
     final List<String> screen = ref.watch(screenProvider);
@@ -35,21 +33,6 @@ class _ScreenCalculatorState extends ConsumerState<ScreenCalculator> {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  toggleDark = !toggleDark;
-                  // Material.of(context).dar
-                });
-              },
-              icon: toggleDark
-                  ? const Icon(
-                      Icons.sunny,
-                      color: Color.fromARGB(255, 214, 200, 68),
-                    )
-                  : const Icon(Icons.sticky_note_2,
-                      color: Color.fromARGB(255, 100, 100, 96)),
-            ),
             const Spacer(),
             Row(
               children: [
